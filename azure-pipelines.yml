@@ -31,6 +31,13 @@ steps:
   artifact: drop
 
 - task: KubernetesManifest@0
+  displayName: Create imagePullSecret
+  inputs:
+              action: createSecret
+              secretName: reactappsecret
+              namespace: default
+              dockerRegistryEndpoint: ArgonDocker_SC
+- task: KubernetesManifest@0
   inputs:
     action: 'deploy'
     kubernetesServiceConnection: 'React_AKS_SC'
@@ -38,10 +45,3 @@ steps:
     manifests: |
       manifests/deployment.yml
       manifests/service.yml
-- task: KubernetesManifest@0
-  displayName: Create imagePullSecret
-  inputs:
-              action: createSecret
-              secretName: reactappsecret
-              namespace: default
-              dockerRegistryEndpoint: ArgonDocker_SC
