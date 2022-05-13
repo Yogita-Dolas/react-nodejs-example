@@ -37,6 +37,7 @@ steps:
               secretName: reactappsecret
               namespace: default
               dockerRegistryEndpoint: ArgonDocker_SC
+              kubernetesServiceConnection: 'React_AKS_SC'
 - task: KubernetesManifest@0
   inputs:
     action: 'deploy'
