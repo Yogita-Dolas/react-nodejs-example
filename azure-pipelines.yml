@@ -38,3 +38,10 @@ steps:
     manifests: |
       manifests/deployment.yml
       manifests/service.yml
+- task: KubernetesManifest@0
+  displayName: Create imagePullSecret
+  inputs:
+              action: createSecret
+              secretName: reactappsecret
+              namespace: default
+              dockerRegistryEndpoint: ArgonDocker_SC
