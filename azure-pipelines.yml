@@ -10,3 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'ArgonDocker_SC'
+    repository: 'ArgonReactJSRepo'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
