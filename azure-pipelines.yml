@@ -46,3 +46,5 @@ steps:
     manifests: |
       manifests/deployment.yml
       manifests/service.yml
+    imagePullSecrets:
+      reactappsecret
