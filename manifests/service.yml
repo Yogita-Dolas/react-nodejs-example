@@ -6,7 +6,7 @@ metadata:
     run: react-webapp
 spec:
   ports:
-  - port: 3080
+  - port: 3040
     protocol: TCP
   selector:
     app: react-webapp
